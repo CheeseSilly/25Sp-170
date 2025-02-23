@@ -1,0 +1,74 @@
+% search for all TODOs
+
+\documentclass[11pt]{article}
+\usepackage{cs170}
+
+
+\def\title{Homework 2}
+\def\duedate{2025/2/23, at 10:00 am (grace period until 11:59pm)}
+
+\begin{document}
+\maketitle
+Due \textbf{\duedate}
+
+
+\question{Study Group}
+List the names and SIDs of the members in your study group.
+If you have no collaborators, you must explicitly write ``none''.
+
+\begin{solution} I worked on this homework with the following collaborators:
+\begin{itemize}
+    \item none,which is only me,Sillycheese
+\end{itemize}
+\end{solution}
+
+\question{Median of Medians}
+
+\begin{subparts}
+    \item (2 points) Let us see an example of QuickSelect in action. Suppose you always pick
+    the first element as the pivot. Compute QuickSelect(A, 6) for the following array: \par
+    \begin{solution}
+        [78,13,97,45,48,26,85,100,78] k=4 \par
+        [13,45,48,26] k=4 \par
+        [45,48,26] k=3 \par
+        [48] k=1 \par
+    \end{solution}
+
+    \item (2 points) Consider the array \par
+    shuffled into some arbitrary order. What is the worst-case runtime of QuickSelect(A,
+n/2) in terms of n? Construct a sequence of ‘bad’ pivot choices that achieves this worst-
+case runtime. \par
+    \begin{solution}
+        $$\frac{n(n+1)}{2}=O(n^2)$$
+    \end{solution}
+
+    \item (3 points) Let p be the pivot chosen by DeterministicSelect on A. Show that at
+    least 3n/10 elements in A are less than or equal to p, and that at least 3n/10 elements
+    are greater than or equal p. \par
+    \begin{solution}
+        firstly,at least half of medians array is less than p.so it is $n/10$.
+        then go back to every median's subarray and add them.It is $\frac{2n+n}{10}$(also need to add itself).
+        so at least $\frac{3n}{10}$ elements in A are Less than or equal to p. \par
+        Same to the greater issue.
+    \end{solution}
+
+    \item In this problem, we will show that the worst-case runtime of DeterministicSelect(A,
+    k) using the ‘Median of Medians’ strategy is O(n). \par
+    \begin{enumerate}[i.]
+        \item Find a recurrence relation for the time complexity of the algorithm, T (n). \par
+        \begin{solution}
+            $$T(n)<=T(n/5)+T(7n/10)+O(n)$$ \par
+            $T(n/5)$ is to find the medians in each subarray.\par
+            $T(7n/10)$ is the at most size of partition size,which is used to recursive call to the DC \par
+            $O(n)$ is just build array and partition time.
+        \end{solution}
+
+        \item Use the recurrence relation to show that, for some sufficently large c ≥ 0, the
+        inequality T (n) ≤c ·n always holds. \par
+        \begin{solution}
+            $$T(n)\leq c(n/5)+c(7n/10)+O(n) \leq c$$
+        \end{solution}
+    \end{enumerate}
+\end{subparts}
+
+\end{document}

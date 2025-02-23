@@ -7,3 +7,9 @@ This repository only contains Homework,including PDF versions and Latex versions
 - [x] Asymptotics Practice
 - [x] Recurrence Relations
 
+## Hw2 ![](https://geps.dev/progress/100)
+
+- [x] Median of Medians
+- [] The Resistance
+- [] Poker
+- [] Coding Question: Closest Pair
