@@ -69,6 +69,28 @@ case runtime. \par
             $$T(n)\leq c(n/5)+c(7n/10)+O(n) \leq c$$
         \end{solution}
     \end{enumerate}
+
+    \item We are playing a variant of The Resistance, a board game where there are n players, s of which are spies. In this variant, in every round, we choose a subset of players to go on a mission. A mission succeeds if the subset of the players does not contain a spy, but fails if at least one spy goes on the mission. After a mission completes, we only know its outcome and not which of the players on the mission were spies. \par
+    \begin{enumerate}[(a)]
+        \item (2 points) If there is one spy (s = 1), come up with a strategy that identifies the spy in O(log(n)) missions. You do not need to prove that your strategy works. \par
+        \begin{solution}
+            partition n/2 each time.until we found that spy. it looks like a BS algorithm. \par
+        \end{solution}
+        
+        \item (2 points) In the general case, when there are s spies, consider evenly splitting the n players into x disjoint groups (containing ≈ n/x players each), and send each group on a mission. At least how many of these x missions must succeed, in terms of x and s? \par
+        \begin{solution}
+            x-s
+        \end{solution}
+
+        \item (8 points) Come up with a strategy that identifies all the spies in O(s log(n/s)) missions. \par
+        \begin{solution}
+            we can partition 2s groups.at least s groups will succeed.then we can recursively deal with those which failed.
+            so the $O(n)=s\log(n/s)$.\par
+            we need to find s groups each time,and we also need to deal with recursive tree,which is $O(log(n/s))$
+        \end{solution}
+    \end{enumerate}
+
+    
 \end{subparts}
 
 \end{document}
