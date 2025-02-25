@@ -22,7 +22,7 @@ If you have no collaborators, you must explicitly write ``none''.
 \end{itemize}
 \end{solution}
 
-\question{Median of Medians}
+\question{Median of Medians,The Resistance,Poker}
 
 \begin{subparts}
     \item (2 points) Let us see an example of QuickSelect in action. Suppose you always pick
@@ -90,7 +90,20 @@ case runtime. \par
         \end{solution}
     \end{enumerate}
 
-    
+    \item You are playing poker with n other friends. Some of your friends are “truthers,” meaning that they always tell the truth, while everyone else is a “bluffer,” meaning that they sometimes tell the truth but also sometimes bluff (lie). You do not know who is a truther or a bluffer, but all your friends do. All you know is that there are more people who always tell the truth than people who bluff. Your goal is to identify one specific player that is a truther. You are allowed to perform a ‘query’ operation as follows: you pick two players as partners. You ask each player if their partner is a truther or bluffer. When you do this, truthers will always tell the true identity of their partner, but bluffers can either lie or tell the truth. Your strategy should work regardless of whether bluffers lie or tell the truth. \par
+    \begin{enumerate}[(a)]
+            \item(3 points) For a given player x, devise a strategy that returns whether or not x is a truther using O(n) queries. Just an informal description of your test and a brief explanation of why it works is needed.\par
+            \begin{solution}
+                ask others(n-1) to determine whether x is truther.
+            \end{solution}
+
+            \item(10 points) Devise a divide and conquer algorithm that finds a truther in O(n log n) queries (where one query is taking two players x and y and asking x to identify y and y to identify x). Hint: Split the players into two groups, recurse on each group, and use part (a). What property must hold for at least one of the two groups? \par
+            \begin{solution}
+                split the players into 2 groups ,and recurse on each group using part(a).  \par
+                By doing this,the number of queries that your strategy requires in the worst case is $2T(\frac{n}{2})+O(n)$
+            \end{solution}
+    \end{enumerate}
+
 \end{subparts}
 
 \end{document}

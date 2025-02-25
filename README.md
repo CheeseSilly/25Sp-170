@@ -11,5 +11,5 @@ This repository only contains Homework,including PDF versions and Latex versions
 
 - [x] Median of Medians
 - [x] The Resistance
-- [] Poker
+- [x] Poker
 - [] Coding Question: Closest Pair
