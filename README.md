@@ -12,4 +12,4 @@ This repository only contains Homework,including PDF versions and Latex versions
 - [x] Median of Medians
 - [x] The Resistance
 - [x] Poker
-- [] Coding Question: Closest Pair
+- [x] Coding Question: Closest Pair
