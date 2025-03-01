@@ -13,3 +13,11 @@ This repository only contains Homework,including PDF versions and Latex versions
 - [x] The Resistance
 - [x] Poker
 - [x] Coding Question: Closest Pair
+
+## Hw3 ![](https://geps.dev/progress/20)
+
+- [x] Depth First Search
+- [ ] Biconnected Components
+- [ ] Topological Sort Proofs
+- [ ] Distant Descendants
+- [ ] **[Coding]** DFS & Edge Classification

@@ -1,0 +1,73 @@
+% search for all TODOs
+
+\documentclass[11pt]{article}
+\usepackage{cs170}
+
+
+\def\title{Homework 3}
+\def\duedate{2025/3/1, at 10:00 pm (grace period until 11:59pm)}
+
+\begin{document}
+\maketitle
+Due \textbf{\duedate}
+
+
+\question{Study Group}
+List the names and SIDs of the members in your study group.
+If you have no collaborators, you must explicitly write ``none''.
+
+\begin{solution} I worked on this homework with the following collaborators:
+\begin{itemize}
+    \item none,which is only me,Sillycheese
+\end{itemize}
+\end{solution}
+
+\question{Depth First Search}
+
+\begin{subparts}
+    \item (4 points) In each of the following cases, PreVisit and PostVisit have been defined for you. After execution, the array A[v] will hold a value for each vertex v. Describe in words what A[v] represents. \par
+    \begin{enumerate}[i.]
+        \item Describe in words what A[v] represents. \par
+        \begin{solution}
+            this is the lognest path form root of subtrees to leaf.
+        \end{solution}
+
+        \item Describe in words what A[v] represents. \par
+        \begin{solution}
+            this is maximum degree.
+        \end{solution}
+    \end{enumerate}
+
+    \item (6 points) In each of the following cases, write down pseudocode for PreVisit and PostVisit routines to perform the computation needed. \par
+    \begin{enumerate}[i.]
+        \item For each vertex v, compute the maximum weight of an edge along the path from root r to vertex v and store it in array A[v]. \par
+        \begin{solution} \par
+            \textbf{procedure} PreVisit(u, v) \\
+            \quad A[v] $\leftarrow$ max(A[u], w(u, v)) \\
+            
+            \textbf{procedure} PostVisit(u, v) \\
+            \quad return
+        \end{solution}
+
+        \item For each vertex v, compute the maximum weight of any edge in the subtree rooted at vertex v and store it in array A[v]. \par
+        \begin{solution} \par
+            \textbf{procedure} PreVisit(u, v) \\
+            \quad return \\
+            
+            \textbf{procedure} PostVisit(u, v) \\
+            \quad A[u] $\leftarrow$ max(A[u],A[v],w(u, v))
+        \end{solution}
+
+        \item For each vertex v, compute the maximum pre-order number of any of its children and store it in array A[v]. If v has no children, then A[v] should be 0. \par
+        \begin{solution} \par
+            \textbf{procedure} PreVisit(u, v) \\
+            \quad t$\leftarrow$ t+1 \\
+            \quad A[u] $\leftarrow$ t \\
+            
+            \textbf{procedure} PostVisit(u, v) \\
+            \quad t$\leftarrow$ t+1 \\
+        \end{solution} 
+    \end{enumerate}
+\end{subparts}
+
+\end{document}
