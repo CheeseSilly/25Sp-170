@@ -68,6 +68,64 @@ If you have no collaborators, you must explicitly write ``none''.
             \quad t$\leftarrow$ t+1 \\
         \end{solution} 
     \end{enumerate}
+
+\end{subparts}
+
+\question{Biconnected Components}
+
+\begin{subparts}
+    \item Suppose that |V | ≥ 2. Can you always find a vertex v ∈ V that is not critical? What about an edge that is not critical? \par
+    \begin{solution}
+        DFS,and find that leaf \par
+        if all Vs are critical \par
+    \end{solution}
+
+    \item Give a linear time algorithm to find all the critical edges of G. \par
+    \begin{solution}
+        PreVisit , and maintain a low value. if pre(v) < low(n), then u-v is critical. \par
+
+    \end{solution}
+
+    \item Modify your algorithm above to find all the critical vertices of G.\par
+    \begin{solution}
+        DFS
+    \end{solution}
+\end{subparts}
+
+\question{Topological Sort Proofs}
+
+\begin{solution}
+    SKIP!all is because of my Ph.D Exam coming:(
+\end{solution}
+
+\question{Distant Descendants}
+
+\begin{subparts}
+    \item Write an O(|V |) algorithm that computes the total size of the subtree (number of descendants plus 1 for the vertex itself) of each vertex v in an array s[v]. Give a brief justification that your algorithm is correct and runs in O(|V |) time. Do not just cite an algorithm from class; reproduce anything you use in your solution. \par
+    \begin{solution}
+        To find the size of subtree. we need to DFS(v),and maintain s[u]=s[u]+s[v] recursively. \par 
+    \end{solution}
+
+    \item Write an O(|V |) algorithm that computes the K-th level ancestor of each vertex v (null if the depth of v is less than K) in an array a[v]. Give a brief justification that your algorithm is correct and runs in O(|V |) time. Make sure your algorithm runs in O(|V |) time and not O(K|V |) time. \par
+    \begin{solution}
+        say a array called a to note the members of ancestors. \par
+         if len(a) > K,then return a[len(a)-1-k] \par
+         else return null \par
+         then recursively loop. \par
+         for (u,v) in G \\
+         $a.push_back(v)$ \\
+         DFS(v) \\
+        $ a.pop_back(v)$ \\
+        clean the path for the next search. \\
+        remember to set a visited array to optimize it!
+    \end{solution}
+
+    \item Write an O(|V |) algorithm to compute d[v] for each vertex v using s[v] and a[v]. Give a brief justification that your algorithm is correct and runs in O(|V |) time. \par
+    \begin{solution}
+        if a[v] exists \\
+        d[a[v]]=s[v]+d[a[v]] \\
+        loop and loop~
+    \end{solution}
 \end{subparts}
 
 \end{document}
