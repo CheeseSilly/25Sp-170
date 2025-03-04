@@ -14,10 +14,10 @@ This repository only contains Homework,including PDF versions and Latex versions
 - [x] Poker
 - [x] Coding Question: Closest Pair
 
-## Hw3 ![](https://geps.dev/progress/80)
+## Hw3 ![](https://geps.dev/progress/100)
 
 - [x] Depth First Search
 - [x] Biconnected Components
 - [x] Topological Sort Proofs
 - [x] Distant Descendants
-- [ ] **[Coding]** DFS & Edge Classification
+- [x] **[Coding]** DFS & Edge Classification
